@@ -27,6 +27,7 @@ static KernelPatcher::KextInfo kextList[] {
 static size_t kextListSize {1};
 
 bool ATH9K::init() {
+    DBGLOG("init", "我在初始化");
 	LiluAPI::Error error = lilu.onKextLoad(kextList, kextListSize,
 	[](void *user, KernelPatcher &patcher, size_t index, mach_vm_address_t address, size_t size) {
         ATH9K *ath9k = static_cast<ATH9K *>(user);
@@ -34,6 +35,7 @@ bool ATH9K::init() {
 	}, this);
 
 	if (error != LiluAPI::Error::NoError) {
+        DBGLOG("init", "我不应该失败！");
 		SYSLOG("ath9k", "failed to register onPatcherLoad method %d", error);
 		return false;
 	}
@@ -49,6 +51,8 @@ void ATH9K::processKext(KernelPatcher &patcher, size_t index, mach_vm_address_t 
         for (size_t i = 0; i < kextListSize; i++) {
             if (kextList[i].loadIndex == index) {
                 if (!(progressState & ProcessingState::AirPortAtheros40Patched) && !strcmp(kextList[i].id, "com.apple.driver.AirPort.Atheros40")) {
+                    DBGLOG("init", "找到Atheros40");
+                    DBGLOG("init", "内核版本: %d", getKernelVersion());
                     DBGLOG("ath9k", "found com.apple.driver.AirPort.Atheros40");
 
                     if (getKernelVersion() == KernelVersion::Mavericks){
@@ -239,6 +243,7 @@ void ATH9K::processKext(KernelPatcher &patcher, size_t index, mach_vm_address_t 
 
                     char tmp[16];
                     if (PE_parse_boot_argn("-ath9485", tmp, sizeof(tmp))) {
+                        DBGLOG("init", "给AR9485打补丁");
                         const uint8_t find[]    = {0x39, 0x33, 0x38, 0x30};
                         const uint8_t replace[] = {0x39, 0x34, 0x38, 0x35};
                         KextPatch kext_patch {
