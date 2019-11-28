@@ -3,23 +3,23 @@
 <plist version="1.0">
 <dict>
 	<key>BuildMachineOSBuild</key>
-	<string>16B2657</string>
+	<string>17A405001</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleExecutable</key>
-	<string>AirPortAtheros40</string>
+	<string>IO80211NetBooter</string>
 	<key>CFBundleGetInfoString</key>
-	<string>7.0, Copyright © 2006–2013 Apple Inc. All rights reserved.</string>
+	<string>12.0, Copyright © 2005–2016 Apple Inc. All rights reserved.</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.apple.driver.AirPort.Atheros40</string>
+	<string>com.apple.driver.IO80211NetBooter</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>AirPortAtheros40</string>
+	<string>IO80211NetBooter</string>
 	<key>CFBundlePackageType</key>
 	<string>KEXT</string>
 	<key>CFBundleShortVersionString</key>
-	<string>7.0</string>
+	<string>12.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleSupportedPlatforms</key>
@@ -27,64 +27,51 @@
 		<string>MacOSX</string>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>700.74.5</string>
+	<string>1200.12.2</string>
 	<key>DTCompiler</key>
 	<string>com.apple.compilers.llvm.clang.1_0</string>
 	<key>DTPlatformBuild</key>
-	<string>9P107g</string>
+	<string>10P70r</string>
+	<key>DTPlatformName</key>
+	<string>macosx</string>
 	<key>DTPlatformVersion</key>
-	<string>GM</string>
+	<string>10.14</string>
 	<key>DTSDKBuild</key>
-	<string>17G4006</string>
+	<string>18G92</string>
 	<key>DTSDKName</key>
-	<string>macosx10.13internal</string>
+	<string>macosx10.14internal</string>
 	<key>DTXcode</key>
-	<string>0930</string>
+	<string>1020</string>
 	<key>DTXcodeBuild</key>
-	<string>9P107g</string>
+	<string>10P70r</string>
 	<key>IOKitPersonalities</key>
 	<dict>
-		<key>Atheros Wireless LAN PCI</key>
+		<key>IO80211NetBooter</key>
 		<dict>
-			<key>CFBundleIdentifier</key>
-			<string>com.apple.driver.AirPort.Atheros40</string>
 			<key>IOClass</key>
-			<string>AirPort_AtherosNewma40</string>
-			<key>IOMatchCategory</key>
-			<string>IODefaultMatchCategory</string>
-			<key>IONameMatch</key>
-			<array>
-				<string>pci168c,30</string>
-				<string>pci168c,2a</string>
-				<string>pci106b,0086</string>
-				<string>pci168c,1c</string>
-				<string>pci168c,23</string>
-				<string>pci168c,24</string>
-			</array>
-			<key>IOProbeScore</key>
-			<integer>700</integer>
+			<string>IO80211NetBooter</string>
 			<key>IOProviderClass</key>
-			<string>IOPCIDevice</string>
+			<string>IO80211NetBootNub</string>
 		</dict>
 	</dict>
+	<key>LSMinimumSystemVersion</key>
+	<string>10.14</string>
 	<key>OSBundleLibraries</key>
 	<dict>
 		<key>com.apple.iokit.IO80211Family</key>
-		<string>600.0</string>
+		<string>1200.12.2</string>
 		<key>com.apple.iokit.IONetworkingFamily</key>
-		<string>3.1</string>
-		<key>com.apple.iokit.IOPCIFamily</key>
-		<string>2.8</string>
+		<string>3.0</string>
 		<key>com.apple.kpi.bsd</key>
-		<string>13.0.0</string>
+		<string>15.0.0</string>
 		<key>com.apple.kpi.iokit</key>
-		<string>13.0.0</string>
+		<string>15.0.0</string>
 		<key>com.apple.kpi.libkern</key>
-		<string>13.0.0</string>
+		<string>15.0.0</string>
 		<key>com.apple.kpi.mach</key>
-		<string>13.0.0</string>
+		<string>15.0.0</string>
 		<key>com.apple.kpi.unsupported</key>
-		<string>13.0.0</string>
+		<string>15.0.0</string>
 	</dict>
 	<key>OSBundleRequired</key>
 	<string>Network-Root</string>
