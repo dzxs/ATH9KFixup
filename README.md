@@ -44,3 +44,4 @@ sudo mount -t msdos /dev/disk0s1 /Volumes/EFI
 
 # 复制ATH9KFixup.kext到clover
 cp -R ATH9KFixup.kext /Volumes/EFI/EFI/CLOVER/kexts/Other
+```
