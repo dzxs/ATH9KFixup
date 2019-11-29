@@ -60,11 +60,6 @@
 				<string>pci168c,1c</string>
 				<string>pci168c,23</string>
 				<string>pci168c,24</string>
-				<string>pci168c,32</string>
-				<string>pci168c,33</string>
-				<string>pci168c,34</string>
-				<string>pci168c,36</string>
-				<string>pci168c,37</string>
 			</array>
 			<key>IOProbeScore</key>
 			<integer>700</integer>

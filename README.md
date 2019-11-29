@@ -23,7 +23,24 @@ Boot args:
 
 #### Usage
 
+config.plist添加以下配置以关闭SIP
+
+```xml
+<key>RtVariables</key>
+    <dict>
+        <key>BooterConfig</key>
+        <string>0x28</string>
+        <key>CsrActiveConfig</key>
+        <string>0x67</string>
+    </dict>
+```
+
 ```bash
+
+# 查看SIP状态
+$ csrutil status
+System Integrity Protection status: disabled.
+
 # 读写模式
 sudo spctl --master-disable
 sudo mount -uw /
@@ -32,8 +49,9 @@ sudo killall Finder
 # 备份IO80211Family.kext
 sudo mv /System/Library/Extensions/IO80211Family.kext ~/Desktop
 
-# 把项目下的IO80211Family.kext复制到/S/L/E
+# 把项目下的IO80211Family.kext ATH9KInjector.kext复制到/S/L/E
 sudo cp -R IO80211Family.kext /System/Library/Extensions
+sudo cp -R ATH9KInjector.kext /System/Library/Extensions
 
 # 重建缓存
 sudo touch /System/Library/Extensions/ && sudo kextcache -u /
